@@ -65,8 +65,12 @@ Create a `Worker` using the project `project`, where `project` is a
 valid argument for `worker_command`.
 """
 function Worker(project::Union{String, Nothing}=nothing)
+    project_string = ""
+    if !isnothing(project)
+        project_string = project
+    end
     socketpath =
-        BaseDirs.User.runtime(RUNTIME_DIR, string("wsetup-", String(rand('a':'z', 6)), ".sock"))
+        BaseDirs.User.runtime(RUNTIME_DIR, string("wsetup-", project_string, "-", String(rand('a':'z', 6)), ".sock"))
     isdir(dirname(socketpath)) || mkpath(dirname(socketpath))
     server = Sockets.listen(socketpath)
     input = Base.PipeEndpoint()
