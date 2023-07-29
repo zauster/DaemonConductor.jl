@@ -187,7 +187,7 @@ function Base.getindex(pool::WorkerPool, project::AbstractString)
                 return worker
             end
         end
-        @log "All $(length(pool.workers[project])) workers have the maximum number of clients"
+        @log "All $(length(pool.workers[project])) workers have the maximum number of clients ($(WORKER_MAXCLIENTS[]))"
     else
         pool.workers[project] = Worker[]
     end
