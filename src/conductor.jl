@@ -116,6 +116,7 @@ function serveclient(connection::Base.PipeEndpoint)
         # REVIEW: Should this get the Julia version from the worker?
         servestring("julia version $VERSION, juliaclient $PACKAGE_VERSION\n")
     else
+        @log "  Dispatching client: pid: $(client.pid), cwd: $(client.cwd), switches: $(client.switches), file: $(client.programfile), args: $(client.args)"
         stdio_sock, signals_sock = runclient(client)
         try
             println(connection, stdio_sock)

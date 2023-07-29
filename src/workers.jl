@@ -222,11 +222,14 @@ Run `client` in `worker`. Returns a socket path for the client to connect to.
 """
 function runclient(worker::Worker, client::Client)
     local sig1, sig2, stdio, signals
+    @log "  runclient at worker#$(worker.id), client pid: $(client.pid)"
     lock(worker) do
         serialize(worker.connection, (:client, convert(NamedTuple, client)))
         sig1, stdio = deserialize(worker.connection)
         sig2, signals = deserialize(worker.connection)
     end
+    # @log "  -> sig1: $(sig1),  stdio: $(stdio)"
+    # @log "  -> sig2: $(sig1),  signals: $(signals)"
     if sig1 == :socket && sig2 == :socket
         stdio, signals
     else

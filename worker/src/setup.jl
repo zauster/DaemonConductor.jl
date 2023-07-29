@@ -80,19 +80,22 @@ end
 
 # Basically a bootleg version of `exec_options`.
 function runclient(client::NamedTuple, stdio::Base.PipeEndpoint, signals::Base.PipeEndpoint)
+    @info "  Runclient1 started. ctime = $(STATE.ctime),  clients = $([x[1] for x in STATE.clients])"
     signal_exit(n) = write(signals, "\x01exit\x02", string(n), "\x04")
 
     lock(STATE.lock) do
         push!(STATE.clients, (time(), client))
     end
+    @info "  Runclient1 after lock. ctime = $(STATE.ctime),  clients = $([x[1] for x in STATE.clients])"
 
     hascolor = getval(client.switches, "--color",
-                        ifelse(startswith(getval(client.env, "TERM", ""),
+                      ifelse(startswith(getval(client.env, "TERM", ""),
                                         "xterm"),
-                                "yes", "")) == "yes"
+                             "yes", "")) == "yes"
     stdiox = IOContext(stdio, :color => hascolor)
     mod = prepare_module(client)
 
+    @info "  Runclient1 dispatching"
     try
         withenv(client.env...) do
             redirect_stdio(stdin=stdiox, stdout=stdiox, stderr=stdiox) do
@@ -124,9 +127,11 @@ function runclient(client::NamedTuple, stdio::Base.PipeEndpoint, signals::Base.P
         end
         queue_ttl_check()
     end
+    @info "  Runclient1 finished"
 end
 
 function runclient(mod::Module, client::NamedTuple; signal_exit::Function)
+    @info "    Runclient2 started"
     runrepl = client.tty && ("-i" ∈ client.switches ||
         (isnothing(client.programfile) && "--eval" ∉ first.(client.switches) &&
         "--print" ∉ first.(client.switches)))
@@ -142,6 +147,7 @@ function runclient(mod::Module, client::NamedTuple; signal_exit::Function)
         end
     end
     if !isnothing(client.programfile)
+        @info "    Runclient2 including program file"
         try
             if client.programfile == "-"
                 Base.include_string(mod, read(stdin, String), "stdin")
@@ -166,10 +172,11 @@ function runclient(mod::Module, client::NamedTuple; signal_exit::Function)
         banner = getval(client.switches, "--banner", "yes") != "no"
         histfile = getval(client.switches, "--history-file", "yes") != "no"
         Core.eval(mod, quote
-                        Core.eval(Base, $(:(have_color = $hascolor)))
-                        Base.run_main_repl(true, $quiet, $banner, $histfile, $hascolor)
-                    end)
+                      Core.eval(Base, $(:(have_color = $hascolor)))
+                      Base.run_main_repl(true, $quiet, $banner, $histfile, $hascolor)
+                  end)
     end
+    @info "    Runclient2 finished"
     signal_exit(0)
 end
 
@@ -177,9 +184,9 @@ end
 function set_project(project)
     Base.set_active_project(
         project === nothing ? nothing :
-        project == "" ? nothing :
-        startswith(project, "@") ? load_path_expand(project) :
-        abspath(expanduser(project)))
+            project == "" ? nothing :
+            startswith(project, "@") ? load_path_expand(project) :
+            abspath(expanduser(project)))
 end
 
 # Worker management
@@ -205,10 +212,21 @@ function newconnection(oldconn::Base.PipeEndpoint, n::Int=1)
 end
 
 function runworker(socketpath::String)
+    logger_filename = replace(replace(socketpath, "sock" => "log"),
+                              "wsetup" => string(getpid()))
+    # logger = FileLogger(logger_filename)
+    logger = FormatLogger(open(logger_filename, "w")) do io, args
+        # Write the module, level and message only
+        println(io, args._module, " | ", "[", now(), "] ", args.message)
+    end
+    global_logger(logger)
+    @info "Started worker at $(socketpath)"
     conn = Sockets.connect(socketpath)
     while ((signal, msg) = deserialize(conn)) |> !isnothing
         if signal == :client
             stdio, signals = newconnection(conn, 2)
+            @info "\n------------------------------"
+            @info "Worker $(getpid()): recv client. msg: (pid = $(msg.pid), switches = $(msg.switches), programfile = $(msg.programfile), args = $(msg.args))"
             !isnothing(signals) &&
                 Threads.@spawn runclient($msg, $stdio, $signals)
         elseif signal == :eval
@@ -224,5 +242,6 @@ function runworker(socketpath::String)
         else
             println(conn, "Unknown signal: $signal")
         end
+        @info "Client execution finished."
     end
 end
