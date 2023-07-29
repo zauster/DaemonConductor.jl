@@ -1,0 +1,96 @@
+DaemonWorker | [2023-07-29T21:39:40.115] Started worker at /run/user/1000/julia-daemon/wsetup-pbejgc.sock
+DaemonWorker | [2023-07-29T21:39:40.567] Client execution finished.
+DaemonWorker | [2023-07-29T21:39:41.150] 
+------------------------------
+2023-07-29T21:39:40.901  Worker 3936: recv client. msg: (pid = 0, switches = [("-e", "nothing")], programfile = nothing, args = String[])
+DaemonWorker | [2023-07-29T21:39:41.150] Client execution finished.
+DaemonWorker | [2023-07-29T21:39:41.566]   Runclient1 started
+DaemonWorker | [2023-07-29T21:39:41.566]   Runclient1 after lock
+DaemonWorker | [2023-07-29T21:39:41.571]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T21:39:41.751]     Runclient2 started
+DaemonWorker | [2023-07-29T21:39:41.751]     Runclient2 finished
+DaemonWorker | [2023-07-29T21:59:33.947] Client execution finished.
+DaemonWorker | [2023-07-29T21:59:34.083] 
+------------------------------
+2023-07-29T21:59:34.073  Worker 3936: recv client. msg: (pid = 6918, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_1690660773576157.toml", "--output_dir", "test", "--random_seed", "1690660773576157"])
+DaemonWorker | [2023-07-29T21:59:34.083] Client execution finished.
+DaemonWorker | [2023-07-29T21:59:34.306]   Runclient1 started
+DaemonWorker | [2023-07-29T21:59:34.306]   Runclient1 after lock
+DaemonWorker | [2023-07-29T21:59:34.311]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T21:59:34.423]     Runclient2 started
+DaemonWorker | [2023-07-29T21:59:34.423]     Runclient2 including program file
+Base | [2023-07-29T21:59:34.447] Loading object cache file /home/reitero/.julia/compiled/v1.9/TextWrap/hiFMy_nRMrh.so for TextWrap [b718987f-49a8-5099-9789-dcd902bef87d]
+Base | [2023-07-29T21:59:34.447] Loading object cache file /home/reitero/.julia/compiled/v1.9/ArgParse/apuSZ_nRMrh.so for ArgParse [c7e460c6-2fb9-53a9-8c5b-16f535851c63]
+Main.Main | [2023-07-29T21:59:34.478]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:00.173]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:00.173]   Runclient1 finished
+DaemonWorker | [2023-07-29T22:00:01.263] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:01.263] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:01.272] 
+------------------------------
+2023-07-29T22:00:01.271  Worker 3936: recv client. msg: (pid = 7042, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_16906608012385137.toml", "--output_dir", "test", "--random_seed", "16906608012385137"])
+DaemonWorker | [2023-07-29T22:00:01.272] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:01.272]   Runclient1 started
+DaemonWorker | [2023-07-29T22:00:01.272]   Runclient1 after lock
+DaemonWorker | [2023-07-29T22:00:01.277]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:01.277]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:01.277]     Runclient2 including program file
+Main.Main | [2023-07-29T22:00:01.284]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:05.900]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:05.900]   Runclient1 finished
+DaemonWorker | [2023-07-29T22:00:06.567] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:06.567] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:06.576] 
+------------------------------
+2023-07-29T22:00:06.576  Worker 3936: recv client. msg: (pid = 7050, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_16906608065574124.toml", "--output_dir", "test", "--random_seed", "16906608065574124"])
+DaemonWorker | [2023-07-29T22:00:06.576] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:06.576]   Runclient1 started
+DaemonWorker | [2023-07-29T22:00:06.576]   Runclient1 after lock
+DaemonWorker | [2023-07-29T22:00:06.581]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:06.581]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:06.581]     Runclient2 including program file
+Main.Main | [2023-07-29T22:00:06.588]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:11.245]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:11.245]   Runclient1 finished
+DaemonWorker | [2023-07-29T22:00:14.706] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:14.706] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:14.716] 
+------------------------------
+2023-07-29T22:00:14.715  Worker 3936: recv client. msg: (pid = 7172, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_16906608146953778.toml", "--output_dir", "test", "--random_seed", "16906608146953778"])
+DaemonWorker | [2023-07-29T22:00:14.716] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:14.716]   Runclient1 started
+DaemonWorker | [2023-07-29T22:00:14.716]   Runclient1 after lock
+DaemonWorker | [2023-07-29T22:00:14.721]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:14.721]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:14.721]     Runclient2 including program file
+Main.Main | [2023-07-29T22:00:14.728]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:19.382]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:19.382]   Runclient1 finished
+DaemonWorker | [2023-07-29T22:00:20.108] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:20.108] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:20.116] 
+------------------------------
+2023-07-29T22:00:20.116  Worker 3936: recv client. msg: (pid = 7222, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_1690660820083941.toml", "--output_dir", "test", "--random_seed", "1690660820083941"])
+DaemonWorker | [2023-07-29T22:00:20.116] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:20.116]   Runclient1 started
+DaemonWorker | [2023-07-29T22:00:20.116]   Runclient1 after lock
+DaemonWorker | [2023-07-29T22:00:20.121]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:20.121]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:20.121]     Runclient2 including program file
+Main.Main | [2023-07-29T22:00:20.128]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:23.188]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:23.188]   Runclient1 finished
+DaemonWorker | [2023-07-29T22:00:42.195] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:42.195] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:42.204] 
+------------------------------
+2023-07-29T22:00:42.204  Worker 3936: recv client. msg: (pid = 7271, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_16906608421859837.toml", "--output_dir", "test", "--random_seed", "16906608421859837"])
+DaemonWorker | [2023-07-29T22:00:42.204] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:42.204]   Runclient1 started
+DaemonWorker | [2023-07-29T22:00:42.204]   Runclient1 after lock
+DaemonWorker | [2023-07-29T22:00:42.210]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:42.210]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:42.210]     Runclient2 including program file
+Main.Main | [2023-07-29T22:00:42.217]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:46.847]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:46.848]   Runclient1 finished

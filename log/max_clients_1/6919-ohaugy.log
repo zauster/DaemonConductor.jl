@@ -1,0 +1,26 @@
+DaemonWorker | [2023-07-29T21:59:36.717] Started worker at /run/user/1000/julia-daemon/wsetup-ohaugy.sock
+DaemonWorker | [2023-07-29T21:59:36.996] Client execution finished.
+DaemonWorker | [2023-07-29T21:59:37.203] 
+------------------------------
+DaemonWorker | [2023-07-29T21:59:37.438] Worker 6919: recv client. msg: (pid = 0, switches = [("-e", "nothing")], programfile = nothing, args = String[])
+DaemonWorker | [2023-07-29T21:59:37.438] Client execution finished.
+DaemonWorker | [2023-07-29T21:59:37.905]   Runclient1 started. ctime = 1.69066077448993e9,  clients = Float64[]
+DaemonWorker | [2023-07-29T21:59:37.905]   Runclient1 after lock. ctime = 1.69066077448993e9,  clients = [1.690660777905922e9]
+DaemonWorker | [2023-07-29T21:59:37.910]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T21:59:38.087]     Runclient2 started
+DaemonWorker | [2023-07-29T21:59:38.087]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:16.410] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:16.441] 
+------------------------------
+DaemonWorker | [2023-07-29T22:00:16.449] Worker 6919: recv client. msg: (pid = 7173, switches = [("--project", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM")], programfile = /home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/Calibration/src/run_one_simulation.jl, args = ["--config_file", "/home/reitero/Arbeit/Projects/local/2023_OeNB_GeneticOptimisation_ABM/models/MultiIndustry_ABM/sbi4abm_configs/model_config_1690660814822457.toml", "--output_dir", "test", "--random_seed", "1690660814822457"])
+DaemonWorker | [2023-07-29T22:00:16.449] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:16.649]   Runclient1 started. ctime = 1.69066077448993e9,  clients = Float64[]
+DaemonWorker | [2023-07-29T22:00:16.649]   Runclient1 after lock. ctime = 1.69066077448993e9,  clients = [1.690660816649904e9]
+DaemonWorker | [2023-07-29T22:00:16.654]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:16.758]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:16.758]     Runclient2 including program file
+Base | [2023-07-29T22:00:16.777] Loading object cache file /home/reitero/.julia/compiled/v1.9/TextWrap/hiFMy_nRMrh.so for TextWrap [b718987f-49a8-5099-9789-dcd902bef87d]
+Base | [2023-07-29T22:00:16.778] Loading object cache file /home/reitero/.julia/compiled/v1.9/ArgParse/apuSZ_nRMrh.so for ArgParse [c7e460c6-2fb9-53a9-8c5b-16f535851c63]
+Main.Main | [2023-07-29T22:00:16.799]  => Simulation in julia is underway!
+DaemonWorker | [2023-07-29T22:00:41.256]     Runclient2 finished
+DaemonWorker | [2023-07-29T22:00:41.257]   Runclient1 finished

@@ -1,0 +1,11 @@
+DaemonWorker | [2023-07-29T22:00:17.052] Started worker at /run/user/1000/julia-daemon/wsetup-iwebyp.sock
+DaemonWorker | [2023-07-29T22:00:17.338] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:17.551] 
+------------------------------
+DaemonWorker | [2023-07-29T22:00:17.790] Worker 7207: recv client. msg: (pid = 0, switches = [("-e", "nothing")], programfile = nothing, args = String[])
+DaemonWorker | [2023-07-29T22:00:17.791] Client execution finished.
+DaemonWorker | [2023-07-29T22:00:18.268]   Runclient1 started. ctime = 1.69066077448993e9,  clients = Float64[]
+DaemonWorker | [2023-07-29T22:00:18.268]   Runclient1 after lock. ctime = 1.69066077448993e9,  clients = [1.690660818268248e9]
+DaemonWorker | [2023-07-29T22:00:18.272]   Runclient1 dispatching
+DaemonWorker | [2023-07-29T22:00:18.452]     Runclient2 started
+DaemonWorker | [2023-07-29T22:00:18.452]     Runclient2 finished
