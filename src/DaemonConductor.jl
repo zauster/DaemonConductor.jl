@@ -32,6 +32,8 @@ function __init__()
     WORKER_MAXCLIENTS[] =
         something(tryparse(Int, get(ENV, "JULIA_DAEMON_WORKER_MAXCLIENTS", "1")),
                   1)
+    # @log "Julia env: $(julia_env())"
+    # @log "WORKER_MAXCLIENTS[] = $(WORKER_MAXCLIENTS[])"
 end
 
 @doc """
